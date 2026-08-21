@@ -1,5 +1,5 @@
 {
-	"name": "adaptivemesh",
+	"name": "Sahayak",
 	"private": true,
 	"version": "0.1.0",
 	"description": "Tiered Communication Protocol for Resilient Mobile Connectivity (codename AdaptiveMesh) — offline-first mesh messenger that falls back Internet -> Wi-Fi -> BLE -> SMS.",
