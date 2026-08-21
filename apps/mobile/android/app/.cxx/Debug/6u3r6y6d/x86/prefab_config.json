@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "prefabPath": "C:\\Users\\Zeltrax\\.gradle\\caches\\modules-2\\files-2.1\\com.google.prefab\\cli\\2.1.0\\aa32fec809c44fa531f01dcfb739b5b3304d3050\\cli-2.1.0-all.jar",
+  "packages": [
+    "C:\\Users\\Zeltrax\\.gradle\\caches\\8.13\\transforms\\5d99a70ba36da3ed7bad43101f336bcb\\transformed\\react-android-0.81.0-debug\\prefab",
+    "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\node_modules\\react-native-reanimated\\android\\build\\intermediates\\prefab_package\\debug\\prefab",
+    "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\node_modules\\@shopify\\react-native-skia\\android\\build\\intermediates\\prefab_package\\debug\\prefab",
+    "C:\\Users\\Zeltrax\\.gradle\\caches\\8.13\\transforms\\4fb53523ed49fdd1f54e3cbacff5a666\\transformed\\hermes-android-0.81.0-debug\\prefab",
+    "C:\\Users\\Zeltrax\\.gradle\\caches\\8.13\\transforms\\24acaea183713502ff784a7edbe16967\\transformed\\fbjni-0.7.0\\prefab"
+  ]
+}

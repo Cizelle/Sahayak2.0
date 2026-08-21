@@ -1,0 +1,85 @@
+apply plugin: "com.android.application"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "com.facebook.react"
+
+/**
+ * Two product flavors implement the user-confirmed dual-track SMS decision:
+ *   play     : NO SEND_SMS permission; SOS via smsto: composer intent.
+ *   sideload : adds SEND_SMS; SmsManager direct send enabled.
+ * The BuildConfig.ALLOW_DIRECT_SMS flag is read by SmsSosModule.kt.
+ */
+
+react {
+    // RN project root (package.json / index.js) is two levels up from this module.
+    root = file("../../")
+    reactNativeDir = file("../../node_modules/react-native")
+    codegenDir = file("../../node_modules/@react-native/codegen")
+    cliFile = file("../../node_modules/@react-native-community/cli/build/bin.js")
+    autolinkLibrariesWithApp()
+}
+
+def enableProguardInReleaseBuilds = false
+
+android {
+    ndkVersion rootProject.ext.ndkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
+
+    namespace "com.adaptivemesh"
+
+    defaultConfig {
+        applicationId "com.adaptivemesh"
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "0.1.0"
+    }
+
+    flavorDimensions "distribution"
+    productFlavors {
+        play {
+            dimension "distribution"
+            // Research/FAER build: direct SMS auto-send is enabled here too so the
+            // SOS texts without opening the composer (user request). This forfeits
+            // Google Play SMS-policy cleanliness, which is irrelevant for a
+            // sideloaded research app. SEND_SMS is also declared in the main manifest.
+            buildConfigField "boolean", "ALLOW_DIRECT_SMS", "true"
+        }
+        sideload {
+            dimension "distribution"
+            applicationIdSuffix ".sideload"
+            buildConfigField "boolean", "ALLOW_DIRECT_SMS", "true"
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Uses AGP's auto-generated ~/.android/debug.keystore (no keystore shipped).
+        }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation("com.facebook.react:react-android")
+    implementation("com.facebook.react:hermes-android")
+    implementation("androidx.core:core-ktx:1.13.1")
+    // Nearby Connections (play flavor only; de-Googled sideload omits Play Services).
+    playImplementation("com.google.android.gms:play-services-nearby:19.3.0")
+}

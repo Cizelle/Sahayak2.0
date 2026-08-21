@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- SIDELOAD-ONLY: direct SMS send capability. This permission is NEVER
+	     merged into the Play build, keeping the play flavor policy-clean. -->
+	<uses-permission android:name="android.permission.SEND_SMS" />
+</manifest>

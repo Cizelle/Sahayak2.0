@@ -1,0 +1,94 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!-- Connectivity -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+	<!-- ============================================================= -->
+	<!-- FOREGROUND SERVICE — the MeshGuard crash fix.                  -->
+	<!-- A connectedDevice FGS on API 34+ requires BOTH the base       -->
+	<!-- FOREGROUND_SERVICE permission AND the typed                   -->
+	<!-- FOREGROUND_SERVICE_CONNECTED_DEVICE permission, the <service> -->
+	<!-- must declare foregroundServiceType="connectedDevice", and the -->
+	<!-- BLE runtime perms must be GRANTED before startForeground().   -->
+	<!-- Missing any of these throws SecurityException /               -->
+	<!-- MissingForegroundServiceTypeException (the original crash).   -->
+	<!-- ============================================================= -->
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+
+	<!-- BLE (API 31+ runtime permissions). neverForLocation lets us scan -->
+	<!-- without ACCESS_FINE_LOCATION, minimizing privacy surface. -->
+	<uses-permission
+		android:name="android.permission.BLUETOOTH_SCAN"
+		android:usesPermissionFlags="neverForLocation" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+	<!-- Nearby Connections (Wi-Fi + BLE radios) -->
+	<uses-permission
+		android:name="android.permission.NEARBY_WIFI_DEVICES"
+		android:usesPermissionFlags="neverForLocation" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+	<!-- Legacy fallback for API <= 30 -->
+	<uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+
+	<!-- GPS for the SOS feature (item #2). Unbounded by SDK version because we -->
+	<!-- read the device location (LocationManager) regardless of API level.   -->
+	<!-- BLE scanning still uses neverForLocation above, so this is requested   -->
+	<!-- only for the SOS fix, not for radio discovery. -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+	<!-- SMS SOS auto-send (user request): SEND_SMS lets the SOS text fire via -->
+	<!-- SmsManager with no manual composer step. Granted at runtime; if the   -->
+	<!-- user denies it, the app falls back to the ACTION_SENDTO composer.     -->
+	<!-- This is a sideloaded research/FAER build, not a Play submission.       -->
+	<uses-permission android:name="android.permission.SEND_SMS" />
+
+	<application
+		android:name=".MainApplication"
+		android:label="AdaptiveMesh"
+		android:icon="@mipmap/ic_launcher"
+		android:allowBackup="false"
+		android:usesCleartextTraffic="false"
+		android:theme="@style/AppTheme">
+
+		<activity
+			android:name=".MainActivity"
+			android:exported="true"
+			android:launchMode="singleTask"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<!-- Typed foreground service. The type here MUST match the type passed -->
+		<!-- to ServiceCompat.startForeground() in MeshForegroundService.kt. -->
+		<service
+			android:name=".MeshForegroundService"
+			android:exported="false"
+			android:foregroundServiceType="connectedDevice" />
+
+		<!-- Shares cached attachment bytes read-only with external apps for the   -->
+		<!-- chat "Open" action (item #7). The authority MUST match the runtime    -->
+		<!-- string packageName + ".fileprovider" used in MediaPickerModule. The   -->
+		<!-- ${applicationId} placeholder resolves per-flavor (play vs sideload).  -->
+		<provider
+			android:name="androidx.core.content.FileProvider"
+			android:authorities="${applicationId}.fileprovider"
+			android:exported="false"
+			android:grantUriPermissions="true">
+			<meta-data
+				android:name="android.support.FILE_PROVIDER_PATHS"
+				android:resource="@xml/file_paths" />
+		</provider>
+
+	</application>
+</manifest>

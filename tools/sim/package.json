@@ -1,0 +1,17 @@
+{
+	"name": "@adaptivemesh/sim",
+	"version": "0.1.0",
+	"description": "Deterministic discrete-event simulator and benchmark harness for the AdaptiveMesh protocol engine. Models radios, link up/down, loss, and latency in virtual time — no real I/O, fully reproducible.",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"test": "node --import tsx --test \"test/**/*.test.ts\"",
+		"test:tap": "node --import tsx --test --test-reporter tap \"test/**/*.test.ts\"",
+		"bench": "node --import tsx src/bench.ts",
+		"typecheck": "tsc -p tsconfig.json --noEmit"
+	},
+	"dependencies": {
+		"@adaptivemesh/core": "0.1.0"
+	},
+	"license": "Apache-2.0"
+}

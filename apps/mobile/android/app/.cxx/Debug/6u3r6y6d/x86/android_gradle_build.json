@@ -1,0 +1,60 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\node_modules\\@shopify\\react-native-skia\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
+    "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\node_modules\\lottie-react-native\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
+    "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\node_modules\\react-native-reanimated\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
+    "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\node_modules\\react-native\\ReactAndroid\\cmake-utils\\default-app-setup\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\Android\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\android\\app\\.cxx\\Debug\\6u3r6y6d\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\Android\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\android\\app\\.cxx\\Debug\\6u3r6y6d\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "appmodules::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "appmodules",
+      "output": "C:\\Users\\Zeltrax\\Desktop\\adaptivemesh\\apps\\mobile\\android\\app\\build\\intermediates\\cxx\\Debug\\6u3r6y6d\\obj\\x86\\libappmodules.so",
+      "runtimeFiles": [
+        "C:\\Users\\Zeltrax\\.gradle\\caches\\8.13\\transforms\\24acaea183713502ff784a7edbe16967\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.x86\\libfbjni.so",
+        "C:\\Users\\Zeltrax\\.gradle\\caches\\8.13\\transforms\\5d99a70ba36da3ed7bad43101f336bcb\\transformed\\react-android-0.81.0-debug\\prefab\\modules\\jsi\\libs\\android.x86\\libjsi.so",
+        "C:\\Users\\Zeltrax\\.gradle\\caches\\8.13\\transforms\\5d99a70ba36da3ed7bad43101f336bcb\\transformed\\react-android-0.81.0-debug\\prefab\\modules\\reactnative\\libs\\android.x86\\libreactnative.so"
+      ]
+    },
+    "react_codegen_lottiereactnative::@0fa4dc904d7e359a99fb": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "react_codegen_lottiereactnative"
+    },
+    "react_codegen_rnreanimated::@8afabad14bfffa3f8b9a": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "react_codegen_rnreanimated"
+    },
+    "react_codegen_rnskia::@376d8504f62839611b97": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "react_codegen_rnskia"
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "D:\\Android\\SDK\\ndk\\27.1.12297006\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "D:\\Android\\SDK\\ndk\\27.1.12297006\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

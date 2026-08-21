@@ -1,0 +1,15 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"rootDir": "../.."
+	},
+	"include": [
+		"src/relayCore.ts",
+		"src/serverHttp.ts",
+		"src/sqliteStore.ts",
+		"src/serverMain.ts",
+		"src/index.ts",
+		"test/**/*.ts",
+		"../../packages/core/src/**/*.ts"
+	]
+}

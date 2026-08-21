@@ -1,0 +1,17 @@
+{
+	"name": "@adaptivemesh/relay",
+	"version": "0.1.0",
+	"description": "Optional zero-knowledge store-and-forward rendezvous relay for AdaptiveMesh. Stores opaque end-to-end-encrypted blobs; cannot decrypt. Pure core + node:http server with a durable node:sqlite store; runs offline with zero external dependencies.",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"test": "node --import tsx --test \"test/**/*.test.ts\"",
+		"test:tap": "node --import tsx --test --test-reporter tap \"test/**/*.test.ts\"",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"start": "RELAY_DB=./relay.db node --import tsx src/serverMain.ts"
+	},
+	"dependencies": {
+		"@adaptivemesh/core": "0.1.0"
+	},
+	"license": "Apache-2.0"
+}

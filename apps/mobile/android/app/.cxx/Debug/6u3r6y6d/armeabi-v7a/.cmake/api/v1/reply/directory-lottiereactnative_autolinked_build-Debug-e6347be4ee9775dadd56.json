@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "lottiereactnative_autolinked_build",
+		"source" : "C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/node_modules/lottie-react-native/android/build/generated/source/codegen/jni"
+	}
+}

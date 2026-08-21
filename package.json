@@ -1,0 +1,37 @@
+{
+	"name": "adaptivemesh",
+	"private": true,
+	"version": "0.1.0",
+	"description": "Tiered Communication Protocol for Resilient Mobile Connectivity (codename AdaptiveMesh) — offline-first mesh messenger that falls back Internet -> Wi-Fi -> BLE -> SMS.",
+	"workspaces": [
+		"packages/*",
+		"services/*",
+		"tools/*"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"test": "node --import tsx --test \"packages/core/src/**/*.test.ts\" \"packages/core/test/**/*.test.ts\" \"tools/sim/test/**/*.test.ts\" \"services/relay/test/**/*.test.ts\"",
+		"test:core": "node --import tsx --test \"packages/core/src/**/*.test.ts\" \"packages/core/test/**/*.test.ts\"",
+		"test:sim": "node --import tsx --test \"tools/sim/test/**/*.test.ts\"",
+		"test:relay": "node --import tsx --test \"services/relay/test/**/*.test.ts\"",
+		"bench": "node --import tsx tools/sim/src/bench.ts",
+		"typecheck": "tsc -p packages/core/tsconfig.json --noEmit && tsc -p tools/sim/tsconfig.json --noEmit && tsc -p services/relay/tsconfig.json --noEmit",
+		"lint": "prettier --check ."
+	},
+	"devDependencies": {
+		"prettier": "^3.8.4",
+		"tsx": "^4.19.0",
+		"typescript": "^5.6.0"
+	},
+	"keywords": [
+		"mesh",
+		"offline-first",
+		"ble",
+		"nearby-connections",
+		"e2ee",
+		"disaster-resilient"
+	],
+	"license": "Apache-2.0"
+}

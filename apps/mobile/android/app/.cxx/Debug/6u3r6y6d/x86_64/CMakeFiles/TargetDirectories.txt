@@ -1,0 +1,12 @@
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/CMakeFiles/appmodules.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/CMakeFiles/rebuild_cache.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/rnreanimated_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/rnreanimated_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/rnskia_autolinked_build/CMakeFiles/react_codegen_rnskia.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/rnskia_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/rnskia_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/lottiereactnative_autolinked_build/CMakeFiles/react_codegen_lottiereactnative.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/lottiereactnative_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/Zeltrax/Desktop/adaptivemesh/apps/mobile/android/app/.cxx/Debug/6u3r6y6d/x86_64/lottiereactnative_autolinked_build/CMakeFiles/rebuild_cache.dir
