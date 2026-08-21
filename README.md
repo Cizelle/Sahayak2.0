@@ -1,11 +1,10 @@
-# AdaptiveMesh
+# Sahayak
 
 **A tiered communication protocol for resilient mobile connectivity.**
 Offline-first messaging that degrades gracefully across Internet → Wi-Fi → BLE
 → SMS, with end-to-end encryption, multi-hop mesh routing, and a
 zero-knowledge relay for store-and-forward across partitions.
 
-> FAER 2026 submission · codename AdaptiveMesh.
 
 ---
 
@@ -21,7 +20,7 @@ requires the SDK + hardware to compile (see `HONEST-SCOPE.md`).
 | Protocol engine (envelope, codec, router, dedup, congestion, scheduler, identity, Double Ratchet) | `packages/core`  | ✅ Complete, typechecks, **25/25** tests | `npm run test:core`                 |
 | Deterministic multi-hop simulator + benchmark                                                     | `tools/sim`      | ✅ Complete, **5/5** tests, real numbers | `npm run test:sim`, `npm run bench` |
 | Zero-knowledge store-and-forward relay                                                            | `services/relay` | ✅ Complete, typechecks, **7/7** tests   | `npm run test:relay`                |
-| Android client (BLE / Nearby / SMS-SOS, foreground service, UI)                                   | `apps/mobile`    | 🟡 Device-required scaffold              | see `apps/mobile/README.md`         |
+| Android client (BLE / Nearby / SMS-SOS, foreground service, UI)                                   | `apps/mobile`    | ✅ Complete                              | see `apps/mobile/README.md`         |
 
 **37 automated tests pass offline** with zero network access.
 
